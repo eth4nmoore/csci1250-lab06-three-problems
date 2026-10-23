@@ -132,4 +132,40 @@ if (choice == 3 || choice == 4)
 {
     System.Console.WriteLine();
     System.Console.WriteLine("=== Exercise 3: The Score Report ===");
+
+    int[] scores = new int[scoreCount];
+
+    for(int index = 0; index < scores.Length; index++)
+    {
+        Console.Write($"Score {index + 1}: ");
+        scores[index] = Convert.ToInt32(Console.ReadLine());
+    }
+
+    int total = 0;
+    int highest = scores[0];
+    int passingCount = 0;
+
+    foreach (int score in scores)
+    {
+        total += score;
+
+        if (score > highest)
+        {
+            highest = score;
+        }
+
+        if (score >= passingScore)
+        {
+            passingCount++;
+        }
+    }
+
+    double average = (double)total / scores.Length;
+
+    System.Console.WriteLine();
+    System.Console.WriteLine($"Scores entered: {scores.Length}");
+    System.Console.WriteLine($"Total: {total}");
+    System.Console.WriteLine($"Average: {average:F1}");
+    System.Console.WriteLine($"Highest: {highest}");
+    System.Console.WriteLine($"Passing: {passingCount} of {scores.Length}");
 }
