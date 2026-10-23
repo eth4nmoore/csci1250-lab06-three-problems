@@ -6,6 +6,8 @@
 * Description: A menu that 
 */
 
+using System.Runtime.ConstrainedExecution;
+
 const int randomSeed = 4000;
 const int scoreCount = 5;
 const int passingScore = 60;
@@ -37,4 +39,23 @@ while (choice < 1 || choice > menuOptionCount)
     }
 }
 
-//check score and report its letter grade
+//1 check score and report its letter grade
+if (choice == 1 || choice == 4)
+{
+    System.Console.WriteLine();
+    System.Console.WriteLine("=== Exercise 1: The Grade Checker ===");
+}
+
+//2 roll two dice and count rolls/wins
+if (choice == 2 || choice == 4)
+{
+    System.Console.WriteLine();
+    System.Console.WriteLine("=== Exercise 2: The Dice Table ===");
+}
+
+//3 collect scores and report summary
+if (choice == 3 || choice == 4)
+{
+    System.Console.WriteLine();
+    System.Console.WriteLine("=== Exercise 3: The Score Report ===");
+}
