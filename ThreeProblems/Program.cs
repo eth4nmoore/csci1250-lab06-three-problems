@@ -86,6 +86,45 @@ if (choice == 2 || choice == 4)
 {
     System.Console.WriteLine();
     System.Console.WriteLine("=== Exercise 2: The Dice Table ===");
+
+    int rollCount = 0;
+    int winCount = 0;
+    string rollAgain;
+
+    do
+    {
+        int firstDie = rng.Next(1, 7);
+        int secondDie = rng.Next(1, 7);
+        int total = firstDie + secondDie;
+
+        rollCount++;
+
+        Console.Write(
+            $"Roll {rollCount}: {firstDie} and {secondDie}, total {total}. ");
+        
+        if (firstDie == 1 && secondDie == 1)
+        {
+            Console.Write(" Snake eyes.");
+        }
+        else if (firstDie == secondDie)
+        {
+            Console.Write(" Doubles!");
+        }
+        else if (total == 7 || total == 11)
+        {
+            Console.Write(" A winner.");
+            winCount++;
+        }
+
+        Console.WriteLine();
+
+        Console.Write("Roll again (y/n): ");
+        rollAgain = Console.ReadLine() ?? "";
+    } while (rollAgain == "y");
+
+    System.Console.WriteLine($"You rolled {rollCount} times and won {winCount}. ");
+
+    
 }
 
 //3 collect scores and report summary
