@@ -44,6 +44,41 @@ if (choice == 1 || choice == 4)
 {
     System.Console.WriteLine();
     System.Console.WriteLine("=== Exercise 1: The Grade Checker ===");
+
+    Console.Write("Score: ");
+    int score = Convert.ToInt32(Console.ReadLine());
+    while (score < 0 || score > 100)
+    {
+        System.Console.WriteLine("A score must be between 0 and 100.");
+        Console.Write("Score: ");
+        score = Convert.ToInt32(Console.ReadLine());
+
+    }
+
+    string letterGrade;
+
+    if (score >= 90)
+    {
+        letterGrade = "A";
+    }
+    else if (score >= 80)
+    {
+        letterGrade = "B";
+    }
+    else if (score >= 70)
+    {
+        letterGrade = "C";
+    }
+    else if (score >= passingScore)
+    {
+        letterGrade = "D";
+    }
+    else
+    {
+        letterGrade = "F";
+    }
+
+    System.Console.WriteLine($"{score} earns a {letterGrade}.");
 }
 
 //2 roll two dice and count rolls/wins
