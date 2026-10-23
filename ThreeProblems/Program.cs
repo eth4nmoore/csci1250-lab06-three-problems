@@ -17,6 +17,11 @@ const int quitOption = 5;
 Random rng = new Random(randomSeed);
 
 int choice = 0;
+do
+{
+    choice = 0;
+    Console.WriteLine();
+
 
 // menu - choose 1 exercise, all three, or quit.
 System.Console.WriteLine("=== CSCI 1250 Lab 06 ===");
@@ -169,3 +174,6 @@ if (choice == 3 || choice == 4)
     System.Console.WriteLine($"Highest: {highest}");
     System.Console.WriteLine($"Passing: {passingCount} of {scores.Length}");
 }
+} while (choice != quitOption);
+
+Console.WriteLine("Goodbye.");
